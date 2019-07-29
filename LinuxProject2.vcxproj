@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{0332A728-E65C-4937-8E7D-B55AE8707944}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUToolchainPrefix />
+    <GNUCompilerType>GCC</GNUCompilerType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <GNUToolchainPrefix />
+    <GNUCompilerType>GCC</GNUCompilerType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <IsRemoteBuild>true</IsRemoteBuild>
+    <Toolchain>$(LOCALAPPDATA)\VisualGDB\ToolchainProfiles\188.134.79.235_52000\gcc</Toolchain>
+    <ToolchainID>com.sysprogs.toolchain.default-gcc</ToolchainID>
+    <ToolchainVersion />
+    <RemoteBuildHost>188.134.79.235</RemoteBuildHost>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <IsRemoteBuild>true</IsRemoteBuild>
+    <Toolchain>$(LOCALAPPDATA)\VisualGDB\ToolchainProfiles\188.134.79.235_52000\gcc</Toolchain>
+    <ToolchainID>com.sysprogs.toolchain.default-gcc</ToolchainID>
+    <ToolchainVersion />
+    <RemoteBuildHost>188.134.79.235</RemoteBuildHost>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>-lrt;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>wiringPi;pthread;crypt;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript>
+      </LinkerScript>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="LinuxProject2.cpp" />
+    <ClCompile Include="stepper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="LinuxProject2-Debug.vgdbsettings" />
+    <None Include="LinuxProject2-Release.vgdbsettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stepper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LinuxProject2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Config.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
